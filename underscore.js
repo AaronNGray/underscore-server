@@ -1125,7 +1125,7 @@
     }
     // Assume equality for cyclic structures. The algorithm for detecting cyclic
     // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
-    
+
     // Initializing stack of traversed objects.
     // It's done here since we only need them for objects and arrays comparison.
     aStack = aStack || [];
@@ -1289,7 +1289,7 @@
     };
   };
 
-  // Returns a predicate for checking whether an object has a given set of 
+  // Returns a predicate for checking whether an object has a given set of
   // `key:value` pairs.
   _.matcher = _.matches = function(attrs) {
     attrs = _.extendOwn({}, attrs);
@@ -1369,9 +1369,9 @@
   // By default, Underscore uses ERB-style template delimiters, change the
   // following template settings to use alternative delimiters.
   _.templateSettings = {
-    evaluate    : /<%([\s\S]+?)%>/g,
-    interpolate : /<%=([\s\S]+?)%>/g,
-    escape      : /<%-([\s\S]+?)%>/g
+    evaluate    : /<\%\%([\s\S]+?)\%\%>/g,
+    interpolate : /<\%\%=([\s\S]+?)\%\%>/g,
+    escape      : /<\%\%-([\s\S]+?)\%\%>/g
   };
 
   // When customizing `templateSettings`, if you don't want to define an
@@ -1516,7 +1516,7 @@
   // Provide unwrapping proxy for some methods used in engine operations
   // such as arithmetic and JSON stringification.
   _.prototype.valueOf = _.prototype.toJSON = _.prototype.value;
-  
+
   _.prototype.toString = function() {
     return '' + this._wrapped;
   };
